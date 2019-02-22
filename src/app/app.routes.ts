@@ -5,7 +5,7 @@ import {RestaurantDetailComponent} from "./restaurant-detail/restaurant-detail.c
 import {AboutComponent} from "./about/about.component";
 import {MenuComponent} from './restaurant-detail/menu/menu.component';
 import {ReviewsComponent} from 'app/restaurant-detail/reviews/reviews.component';
-import {OrderComponent} from './order/order.component'
+import { OrderComponent } from "./order/order.component";
 
 export const ROUTES: Routes = [
     {path: '', component: HomeComponent},
