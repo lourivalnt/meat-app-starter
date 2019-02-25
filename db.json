@@ -370,5 +370,23 @@
       "restaurantId": "tasty-treats"
     }
   ],
-  "orders": []
+  "orders": [
+    {
+      "address": "wwwww",
+      "number": "222",
+      "optionalAddress": "wwww",
+      "paymentOption": "MON",
+      "orderItems": [
+        {
+          "quantity": 1,
+          "menuId": "zlasagna"
+        },
+        {
+          "quantity": 1,
+          "menuId": "ceasar"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

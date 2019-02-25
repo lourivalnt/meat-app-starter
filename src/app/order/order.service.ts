@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map'
 
 import { ShoppingCartService } from 'app/restaurant-detail/shopping-cart/shopping-cart.service';
 import { CartItem } from 'app/restaurant-detail/shopping-cart/cart-item.model';
+import { Order } from './order.model';
 
 @Injectable()
 export class OrderService{
@@ -33,6 +34,17 @@ export class OrderService{
 
     clear(){
         this.cartService.clear();
+    }
+
+    checkOrder(order: Order): Observable<string>{
+        const headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+
+        return this.http.post(
+            `${MEAT_API}/orders`, 
+            JSON.stringify(order), 
+            new RequestOptions({headers: headers}))
+            .map(response=> response.json())
     }
     
 }
