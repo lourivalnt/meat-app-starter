@@ -5,7 +5,6 @@ import { MenuItem } from '../menu-item/menu-item.model'
 
 import { Observable } from 'rxjs/Observable'
 
-
 @Component({
   selector: 'mt-menu',
   templateUrl: './menu.component.html'
