@@ -15,7 +15,7 @@ export class LoginService {
   user: User
   lastUrl: string
 
-  constructor(private http: HttpClient){}
+  constructor(private http: HttpClient, private router: Router){}
 
   isLoggedIn(): boolean {
     return this.user !== undefined
@@ -25,5 +25,9 @@ export class LoginService {
     return this.http.post<User>(`${MEAT_API}/login`,
                           {email: email, password: password})
                     .do(user => this.user = user)
+  }
+
+  handleLogin(path?: string){
+    this.router.navigate(['/login', path])
   }
 }
