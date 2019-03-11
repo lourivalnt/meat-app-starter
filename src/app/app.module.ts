@@ -4,7 +4,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations'
-import {LocationStrategy, HashLocationStrategy} from '@angular/common'
+import { HashLocationStrategy, LocationStrategy, registerLocaleData } from "@angular/common";
+import locatePT from '@angular/common/locales/pt'
+
+registerLocaleData(locatePT, 'pt')
 
 import {ApplicationErrorHandler} from './app.error-handler'
 import {ROUTES} from './app.routes'
@@ -51,7 +54,7 @@ import { UserDetailComponent } from './header/user-detail/user-detail.component'
     SharedModule.forRoot(),
     RouterModule.forRoot(ROUTES, {preloadingStrategy: PreloadAllModules})
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'pt-BR'},
+  providers: [{provide: LOCALE_ID, useValue: 'pt'},
               {provide: ErrorHandler, useClass: ApplicationErrorHandler}],
   bootstrap: [AppComponent]
 })
