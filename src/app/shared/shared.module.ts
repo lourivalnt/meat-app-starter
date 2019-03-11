@@ -17,6 +17,7 @@ import {LoginService} from '../security/login/login.service'
 
 import {LoggedInGuard} from '../security/loggedin.guard'
 import {LeaveOrderGuard} from '../order/leave-order.guard'
+import {AuthInterceptor} from '../security/auth.interceptor'
 
 @NgModule({
   declarations: [InputComponent, RadioComponent, RatingComponent, SnackbarComponent],
@@ -35,7 +36,8 @@ export class SharedModule {
                  NotificationService,
                  LoginService,
                  LoggedInGuard,
-                 LeaveOrderGuard
+                 LeaveOrderGuard,
+                 {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true}
                 ]
     }
   }
